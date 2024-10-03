@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    prototype create a new object everytime we use bean-->
+<!--    singleton creates only one object-->
+
+<!-- setter injection-->
+<!--    for primitie we use value-->
+<!--    for object we create bean and use ref of that created bean with id-->
+
+<!--    constructor injection-->
+<!--            we can maintain sequence-->
+<!--            we can use type for different parameter-->
+<!--            we can use index that start with 0-->
+<!--            we can use name-->
+
+<!--    <bean id="alien" class="org.example.Alien" scope="prototype">-->
+<!--        <constructor-arg value="21" />-->
+<!--        <constructor-arg ref="student" />-->
+<!--        <property name="age" value="15"/>-->
+<!--        <property name="s" ref="student"/>-->
+<!--    </bean>-->
+
+
+
+<!--    byName : it is going to bean that name is same as in java member name-->
+<!--    byType : it is find which kind type of object we want in java-->
+<!--                : if same datatype more than one exist than it going to use primary bean-->
+<!--    <bean id="desk" class="org.example.Desktop" primary="true" lazy-init="true"> </bean>-->
+
+<!--    INNER BEAN  : we can use it only with outer bean, not directly-->
+<!--    <bean id="alien" class="org.example.Alien" >-->
+<!--        <property name="com" ref="desk">-->
+<!--            <bean id="com" class="org.example.Laptop"> </bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+        <bean id="alien" class="org.example.Alien" >
+            <property name="age" value="20" />
+            <property name="com" ref="desk"> </property>
+        </bean>
+
+    <bean id="com" class="org.example.Laptop"> </bean>
+    <bean id="desk" class="org.example.Desktop"> </bean>
+
+
+    <bean id="student" class="org.example.Student">
+    </bean>
+
+</beans>

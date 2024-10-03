@@ -1,0 +1,31 @@
+SECTION 7 NOTES
+1. Application Context: The Spring framework uses the ApplicationContext interface to provide configuration information to the application.
+
+2. XML Configuration: This involves defining beans and their dependencies in an XML file, usually created in the java→resources→config.xml path.
+
+3. How Objects Are Created: Spring creates objects based on the bean definitions specified in the XML configuration.
+
+4. Scope:
+        Singleton: This is the default scope, meaning only one instance of the bean is created and shared every time.
+        Prototype: A new instance is created every time the bean is requested.
+     
+5. Setter Injection: It is a way to set values without a setter method. Example: <property name="age" value="20" />
+
+6. Ref Attributes: Used to set the value of an object.
+
+7. Constructor Injection: Dependencies are injected through the constructor. This can be done in various ways:
+        We can maintain sequence.
+        We can use type for different parameters.   
+        We can use index starting from 0.
+        We can use name.
+
+8. Autowiring:
+        ByName: The bean is injected by matching the property name with the bean name.
+        ByType: The bean is injected by matching the type.
+        Primary Bean: The primary bean is used when multiple beans of the same type exist.
+        Explicit Mention: The highest priority is given when the dependency is explicitly mentioned.
+        
+9. Lazy Initialization: Beans are created only when they are first requested, as opposed to being initialized at application startup.
+
+10. Inner Beans: Inner beans are beans defined within the scope of another bean. They are typically used when a bean is only required by one other bean and doesn’t need a global scope.
+
